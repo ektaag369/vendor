@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "416549504055",
+    "project_id": "agrohackathon-4c0dd",
+    "storage_bucket": "agrohackathon-4c0dd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:416549504055:android:76cc4ad17ce91403daabb2",
+        "android_client_info": {
+          "package_name": "com.example.vendor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "416549504055-o60d5fbr68s5ooegtrnbcon10an69p3q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0CeJgIHyZU0dLgYVtfznJa5tiV-fGw8k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "416549504055-o60d5fbr68s5ooegtrnbcon10an69p3q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
