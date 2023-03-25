@@ -5,4 +5,10 @@
         <item>Female</item>
         <item>Other</item>
     </string-array>
+
+    <string-array name="stock">
+        <item>true</item>
+        <item>false</item>
+
+    </string-array>
 </resources>
