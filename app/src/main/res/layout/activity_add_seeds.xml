@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddSeeds">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/seedid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="SeedID"
+            android:layout_marginBottom="10dp"
+            android:maxLines="1"
+            android:inputType="text"/>
+
+        <EditText
+            android:id="@+id/seedname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="SeedName"
+            android:layout_marginBottom="10dp"
+            android:inputType="text"/>
+        <EditText
+            android:id="@+id/seeddescription"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:hint="SeedDescription"
+            android:layout_marginBottom="10dp"
+            android:inputType="textLongMessage"/>
+        <EditText
+            android:id="@+id/seedvariety"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="SeedVariety"
+            android:layout_marginBottom="10dp"
+            android:inputType="text"/>
+        <EditText
+            android:id="@+id/seedprice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="SeedPrice"
+            android:layout_marginBottom="10dp"
+            android:inputType="number"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/seedimg"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/ic_launcher_background"/>
+            <Button
+                android:id="@+id/seedimgbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Show image"
+                android:layout_marginLeft="10dp"/>
+            <Button
+                android:id="@+id/uploadimgbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Upload image"
+                android:layout_marginLeft="10dp"/>
+
+        </LinearLayout>
+        <EditText
+            android:id="@+id/seedbrandname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="BrandName"
+            android:layout_marginBottom="10dp"
+            android:maxLines="1"
+            android:inputType="text"/>
+
+        <EditText
+            android:id="@+id/seedtimeperiod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Month and year of harvesting"
+            android:layout_marginBottom="10dp"
+            android:inputType="number"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/seedstockstatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="In Stock "
+                android:layout_marginBottom="10dp"
+                android:inputType="text"/>
+            <Spinner
+                android:id="@+id/seedspinnerstock"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"/>
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/seeditemwt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Item weight"
+            android:layout_marginBottom="10dp"
+            android:inputType="number"/>
+        <EditText
+            android:id="@+id/seednetqty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Netqty"
+            android:layout_marginBottom="10dp"
+            android:inputType="number"/>
+
+        <Button
+            android:id="@+id/seedaddbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add"
+            android:textColor="@color/white"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+</ScrollView>
