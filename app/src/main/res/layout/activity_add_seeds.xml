@@ -70,12 +70,6 @@
                 android:layout_height="wrap_content"
                 android:text="Show image"
                 android:layout_marginLeft="10dp"/>
-            <Button
-                android:id="@+id/uploadimgbtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Upload image"
-                android:layout_marginLeft="10dp"/>
 
         </LinearLayout>
         <EditText
