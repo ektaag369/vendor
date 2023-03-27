@@ -1,5 +1,6 @@
 package com.example.vendor;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -25,9 +26,12 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.SetOptions;
 import com.google.firebase.storage.FirebaseStorage;
@@ -61,6 +65,8 @@ public class AddSeeds extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_seeds);
 
+
+        // xml ids
         seedid=findViewById(R.id.seedid);
         seedname=findViewById(R.id.seedname);
         seeddesc=findViewById(R.id.seeddescription);
@@ -76,6 +82,7 @@ public class AddSeeds extends AppCompatActivity {
         seedimg=findViewById(R.id.seedimg);
         seedimgbtn=findViewById(R.id.seedimgbtn);
 
+        // spinner
         arrayAdapter = ArrayAdapter.createFromResource(this, R.array.stock, android.R.layout.simple_spinner_item);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(arrayAdapter);
@@ -91,6 +98,7 @@ public class AddSeeds extends AppCompatActivity {
             }
         });
 
+        // add image
         seedimgbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -119,6 +127,8 @@ public class AddSeeds extends AppCompatActivity {
         });
 
 
+        // add data to firebase
+
         add_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -131,7 +141,7 @@ public class AddSeeds extends AppCompatActivity {
                     Toast.makeText(AddSeeds.this, "Please fill all the details", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    add_seeds();
+                    add_seeds(filepath);
                 }
             }
         });
@@ -141,6 +151,7 @@ public class AddSeeds extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if(requestCode==101 && resultCode==RESULT_OK){
             filepath=data.getData();
+
             try{
                 InputStream inputStream=getContentResolver().openInputStream(filepath);
                 bitmap= BitmapFactory.decodeStream(inputStream);
@@ -148,29 +159,29 @@ public class AddSeeds extends AppCompatActivity {
             }catch (Exception e){
 
             }
-            FirebaseStorage storage= FirebaseStorage.getInstance();
-            String filename=getfilenamefromuri(filepath );
-            StorageReference seeduploader=storage.getReference().child("/seedimages").child(filename);
-
-            seeduploader.putFile(filepath).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                @Override
-                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    seeduploader.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                        @Override
-                        public void onSuccess(Uri uri) {
-                            seedimgurl=(String.valueOf(uri));
-
-                        }
-                    });
-                }
-            });
+//            FirebaseStorage storage= FirebaseStorage.getInstance();
+//            String filename=getfilenamefromuri(filepath );
+//            StorageReference seeduploader=storage.getReference().child("/seedimages").child(filename);
+//
+//            seeduploader.putFile(filepath).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+//                @Override
+//                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+//                    seeduploader.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+//                        @Override
+//                        public void onSuccess(Uri uri) {
+//                            seedimgurl=(String.valueOf(uri));
+//
+//                        }
+//                    });
+//                }
+//            });
 
 
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-    private void add_seeds() {
+    private void add_seeds(Uri image) {
 
         ProgressDialog pd = new ProgressDialog(AddSeeds.this);
         pd.setTitle("Seeds Adding");
@@ -209,15 +220,40 @@ public class AddSeeds extends AppCompatActivity {
         seeds.put("VendorID",seedModelClass.getVendorID());
         seeds.put("Variety",seedModelClass.getVariety());
 
-        firestore.collection("Seeds").document(seedid.getText().toString())
-                .set(seeds).addOnSuccessListener(new OnSuccessListener<Void>() {
+        FirebaseStorage storage= FirebaseStorage.getInstance();
+        String filename=getfilenamefromuri(filepath );
+        StorageReference seeduploader=storage.getReference().child("/seedimages").child(filename);
+
+        seeduploader.putFile(filepath).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                seeduploader.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override
-                    public void onSuccess(Void unused) {
-                        pd.dismiss();
-                        Toast.makeText(AddSeeds.this, "Seeds Added", Toast.LENGTH_SHORT).show();
-                        emptyFields();
+                    public void onSuccess(Uri uri) {
+                        seedimgurl=(String.valueOf(uri));
+                        seeds.put("ImageUrl",seedimgurl);
+                        firestore.collection("Seeds").add(seeds).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+                            @Override
+                            public void onComplete(@NonNull Task<DocumentReference> task) {
+                                if (task.isComplete()){
+                                    Toast.makeText(AddSeeds.this, "data uploaded successfully", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
                     }
                 });
+            }
+        });
+
+//        firestore.collection("Seeds").document(seedid.getText().toString())
+//                .set(seeds).addOnSuccessListener(new OnSuccessListener<Void>() {
+//                    @Override
+//                    public void onSuccess(Void unused) {
+//                        pd.dismiss();
+//                        Toast.makeText(AddSeeds.this, "Seeds Added", Toast.LENGTH_SHORT).show();
+//                        emptyFields();
+//                    }
+//                });
     }
 
     @SuppressLint("Range")
