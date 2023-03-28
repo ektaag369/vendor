@@ -1,4 +1,4 @@
-package com.example.vendor;
+package com.example.vendor.VendorModule.DashBoard.Seeds;
 
 import java.util.ArrayList;
 
@@ -8,28 +8,30 @@ public class SeedsModelClass {
     String BrandName;
     String SeedName;
     String SeedDescription;
-    String TimePeriod;
-    Double ItemWeight;
-    Integer NetQuantity;
-    Boolean StockStatus;
+    String MonthHarvesting;
+    String YearHarvesting;
+    String ItemWeight;
+    String NetQuantity;
+    String StockStatus;
     Double Price;
     String VendorID;
     String Variety;
-    String SeedImg;
+    String ImageUrl;
 
-    public SeedsModelClass(String seedID, String brandName, String seedName, String seedDescription, String timePeriod, Double itemWeight, Integer netQuantity, Boolean stockStatus, Double price, String vendorID, String variety, String seedimg) {
+    public SeedsModelClass(String seedID, String brandName, String seedName, String seedDescription, String monthHarvesting, String yearHarvesting, String itemWeight, String netQuantity, String stockStatus, Double price, String vendorID, String variety, String imageUrl) {
         SeedID = seedID;
         BrandName = brandName;
         SeedName = seedName;
         SeedDescription = seedDescription;
-        TimePeriod = timePeriod;
+        MonthHarvesting = monthHarvesting;
+        YearHarvesting = yearHarvesting;
         ItemWeight = itemWeight;
         NetQuantity = netQuantity;
         StockStatus = stockStatus;
         Price = price;
         VendorID = vendorID;
-        Variety=variety;
-        SeedImg=seedimg;
+        Variety = variety;
+        ImageUrl = imageUrl;
     }
 
     public SeedsModelClass() {
@@ -67,35 +69,43 @@ public class SeedsModelClass {
         SeedDescription = seedDescription;
     }
 
-    public String getTimePeriod() {
-        return TimePeriod;
+    public String getMonthHarvesting() {
+        return MonthHarvesting;
     }
 
-    public void setTimePeriod(String timePeriod) {
-        TimePeriod = timePeriod;
+    public void setMonthHarvesting(String monthHarvesting) {
+        MonthHarvesting = monthHarvesting;
     }
 
-    public Double getItemWeight() {
+    public String getYearHarvesting() {
+        return YearHarvesting;
+    }
+
+    public void setYearHarvesting(String yearHarvesting) {
+        YearHarvesting = yearHarvesting;
+    }
+
+    public String getItemWeight() {
         return ItemWeight;
     }
 
-    public void setItemWeight(Double itemWeight) {
+    public void setItemWeight(String itemWeight) {
         ItemWeight = itemWeight;
     }
 
-    public Integer getNetQuantity() {
+    public String getNetQuantity() {
         return NetQuantity;
     }
 
-    public void setNetQuantity(Integer netQuantity) {
+    public void setNetQuantity(String netQuantity) {
         NetQuantity = netQuantity;
     }
 
-    public Boolean getStockStatus() {
+    public String getStockStatus() {
         return StockStatus;
     }
 
-    public void setStockStatus(Boolean stockStatus) {
+    public void setStockStatus(String stockStatus) {
         StockStatus = stockStatus;
     }
 
@@ -123,11 +133,11 @@ public class SeedsModelClass {
         Variety = variety;
     }
 
-    public String getSeedImg() {
-        return SeedImg;
+    public String getImageUrl() {
+        return ImageUrl;
     }
 
-    public void setSeedImg(String seedImg) {
-        SeedImg = seedImg;
+    public void setImageUrl(String imageUrl) {
+        ImageUrl = imageUrl;
     }
 }

@@ -15,30 +15,34 @@
         android:theme="@style/Theme.Vendor"
         tools:targetApi="31">
         <activity
-            android:name=".test"
+            android:name=".SeedDashboardActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity2"
-            android:exported="false"
-            android:label="@string/title_activity_main2"
-            android:theme="@style/Theme.Vendor" />
-        <activity
-            android:name=".AddSeeds"
+            android:name=".VendorModule.DashBoard.Chemicals.ShowChemicals"
             android:exported="false" />
         <activity
-            android:name=".VendorDetails"
+            android:name=".VendorModule.DashBoard.Seeds.ShowSeeds"
             android:exported="false" />
         <activity
-            android:name=".VerifyOtpActivity"
+            android:name=".VendorModule.DashBoard.Seeds.AddSeeds"
             android:exported="false" />
         <activity
-            android:name=".PhoneActivity"
+            android:name=".VendorModule.VendorDetails"
+            android:exported="false" />
+        <activity
+            android:name=".VendorModule.DashBoard.VendorDashboard"
+            android:exported="false" />
+        <activity
+            android:name=".Auth.VerifyOtpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Auth.PhoneActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".Auth.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

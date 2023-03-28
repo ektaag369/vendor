@@ -8,20 +8,20 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/seedsbtn"
+        android:id="@+id/vendor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Seeds"/>
+        android:text="Vendor"/>
     <Button
-        android:id="@+id/chemicalsbtn"
+        android:id="@+id/MachineLender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Chemicals"/>
+        android:text="Machine Lender"/>
     <Button
-        android:id="@+id/fghjk"
+        android:id="@+id/PostHarvester"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Chemicals"/>
+        android:text="Post Harvester"/>
 
 
 </LinearLayout>
