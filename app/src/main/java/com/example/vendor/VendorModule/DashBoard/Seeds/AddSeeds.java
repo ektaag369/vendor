@@ -173,12 +173,12 @@ public class AddSeeds extends AppCompatActivity {
         String vendorid= mAuth.getCurrentUser().getUid();
         HashMap<String,Object> seeds=new HashMap<>();
 
+        String Timeperiod=month.getText().toString()+" Months "+year.getText().toString()+" Years";
         seeds.put("SeedID",seedid.getText().toString());
         seeds.put("BrandName",brandname.getText().toString());
         seeds.put("SeedName",seedname.getText().toString());
         seeds.put("SeedDescription",seeddesc.getText().toString());
-        seeds.put("MonthHarvesting",month.getText().toString());
-        seeds.put("YearHarvesting",year.getText().toString());
+        seeds.put("Timeperiod",Timeperiod);
         seeds.put("ItemWeight",itemwt.getText().toString());
         seeds.put("NetQuantity",netqty.getText().toString());
         seeds.put("StockStatus",stock.getText().toString());

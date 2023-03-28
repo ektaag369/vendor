@@ -8,23 +8,21 @@ public class SeedsModelClass {
     String BrandName;
     String SeedName;
     String SeedDescription;
-    String MonthHarvesting;
-    String YearHarvesting;
+    String Timeperiod;
     String ItemWeight;
     String NetQuantity;
     String StockStatus;
-    Double Price;
+    double Price;
     String VendorID;
     String Variety;
     String ImageUrl;
 
-    public SeedsModelClass(String seedID, String brandName, String seedName, String seedDescription, String monthHarvesting, String yearHarvesting, String itemWeight, String netQuantity, String stockStatus, Double price, String vendorID, String variety, String imageUrl) {
+    public SeedsModelClass(String seedID, String brandName, String seedName, String seedDescription, String timeperiod, String itemWeight, String netQuantity, String stockStatus, double price, String vendorID, String variety, String imageUrl) {
         SeedID = seedID;
         BrandName = brandName;
         SeedName = seedName;
         SeedDescription = seedDescription;
-        MonthHarvesting = monthHarvesting;
-        YearHarvesting = yearHarvesting;
+        Timeperiod = timeperiod;
         ItemWeight = itemWeight;
         NetQuantity = netQuantity;
         StockStatus = stockStatus;
@@ -69,20 +67,12 @@ public class SeedsModelClass {
         SeedDescription = seedDescription;
     }
 
-    public String getMonthHarvesting() {
-        return MonthHarvesting;
+    public String getTimeperiod() {
+        return Timeperiod;
     }
 
-    public void setMonthHarvesting(String monthHarvesting) {
-        MonthHarvesting = monthHarvesting;
-    }
-
-    public String getYearHarvesting() {
-        return YearHarvesting;
-    }
-
-    public void setYearHarvesting(String yearHarvesting) {
-        YearHarvesting = yearHarvesting;
+    public void setTimeperiod(String timeperiod) {
+        Timeperiod = timeperiod;
     }
 
     public String getItemWeight() {
@@ -109,11 +99,11 @@ public class SeedsModelClass {
         StockStatus = stockStatus;
     }
 
-    public Double getPrice() {
+    public double getPrice() {
         return Price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(double price) {
         Price = price;
     }
 
