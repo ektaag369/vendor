@@ -15,22 +15,25 @@
         android:theme="@style/Theme.Vendor"
         tools:targetApi="31">
         <activity
-            android:name=".SeedDashboardActivity"
+            android:name=".Chemicals.ChemicalDashboard"
             android:exported="false" />
         <activity
-            android:name=".VendorModule.DashBoard.Chemicals.ShowChemicals"
+            android:name=".Seeds.SeedDashboardActivity"
             android:exported="false" />
         <activity
-            android:name=".VendorModule.DashBoard.Seeds.ShowSeeds"
+            android:name=".Chemicals.ShowChemicals"
             android:exported="false" />
         <activity
-            android:name=".VendorModule.DashBoard.Seeds.AddSeeds"
+            android:name=".Seeds.ShowSeeds"
             android:exported="false" />
         <activity
-            android:name=".VendorModule.VendorDetails"
+            android:name=".Seeds.AddSeeds"
             android:exported="false" />
         <activity
-            android:name=".VendorModule.DashBoard.VendorDashboard"
+            android:name=".Vendor.VendorDetails"
+            android:exported="false" />
+        <activity
+            android:name=".Vendor.VendorDashboard"
             android:exported="false" />
         <activity
             android:name=".Auth.VerifyOtpActivity"

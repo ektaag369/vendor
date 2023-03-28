@@ -1,4 +1,4 @@
-package com.example.vendor.VendorModule;
+package com.example.vendor.Vendor;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,11 +9,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.vendor.R;
-import com.example.vendor.VendorModule.DashBoard.VendorDashboard;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -50,7 +48,7 @@ public class VendorDetails extends AppCompatActivity {
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 if(documentSnapshot.exists()){
                     pd.dismiss();
-                    Intent i=new Intent(VendorDetails.this,VendorDashboard.class);
+                    Intent i=new Intent(VendorDetails.this, VendorDashboard.class);
                     startActivity(i);
                     finish();
                 }

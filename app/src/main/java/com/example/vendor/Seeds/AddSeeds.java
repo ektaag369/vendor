@@ -1,4 +1,4 @@
-package com.example.vendor.VendorModule.DashBoard.Seeds;
+package com.example.vendor.Seeds;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

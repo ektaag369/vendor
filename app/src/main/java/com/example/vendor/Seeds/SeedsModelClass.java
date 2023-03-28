@@ -1,6 +1,4 @@
-package com.example.vendor.VendorModule.DashBoard.Seeds;
-
-import java.util.ArrayList;
+package com.example.vendor.Seeds;
 
 public class SeedsModelClass {
 
