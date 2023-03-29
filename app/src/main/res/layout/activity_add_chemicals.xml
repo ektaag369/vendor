@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Seeds.AddSeeds">
+    tools:context=".Chemicals.AddChemicals">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,45 +17,55 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/seedid"
+            android:id="@+id/chemicalid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="SeedID"
+            android:hint="ChemicalID"
             android:layout_marginBottom="10dp"
             android:maxLines="1"
             android:inputType="text"/>
 
         <EditText
-            android:id="@+id/seedname"
+            android:id="@+id/chemicalname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="SeedName"
+            android:hint="ChemicalName"
             android:layout_marginBottom="10dp"
             android:inputType="text"/>
         <EditText
-            android:id="@+id/seeddescription"
+            android:id="@+id/chemicaldescription"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:hint="SeedDescription"
+            android:hint="chemicalDescription"
             android:layout_marginBottom="10dp"
             android:inputType="textLongMessage"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/chemicalcategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fertilizers"
+                android:layout_marginBottom="10dp"
+                android:inputType="text"/>
+            <Spinner
+                android:id="@+id/chemicalcategoryspinner"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"/>
+        </LinearLayout>
         <EditText
-            android:id="@+id/seedvariety"
+            android:id="@+id/chemicalprice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="SeedVariety"
-            android:layout_marginBottom="10dp"
-            android:inputType="text"/>
-        <EditText
-            android:id="@+id/seedprice"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="SeedPrice"
+            android:hint="chemicalPrice"
             android:layout_marginBottom="10dp"
             android:inputType="number"/>
 
         <EditText
-            android:id="@+id/seedbrandname"
+            android:id="@+id/chemicalbrandname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="BrandName"
@@ -63,52 +73,46 @@
             android:maxLines="1"
             android:inputType="text"/>
 
-        <EditText
-            android:id="@+id/seedmonth"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Month of harvesting"
-            android:layout_marginBottom="10dp"
-            android:inputType="number"/>
-        <EditText
-            android:id="@+id/seedyear"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Year of harvesting"
-            android:layout_marginBottom="10dp"
-            android:inputType="number"/>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <TextView
-                android:id="@+id/seedstockstatus"
+                android:id="@+id/chemicalstockstatus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="In Stock "
                 android:layout_marginBottom="10dp"
                 android:inputType="text"/>
             <Spinner
-                android:id="@+id/seedspinnerstock"
+                android:id="@+id/chemicalspinnerstock"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"/>
         </LinearLayout>
 
         <EditText
-            android:id="@+id/seeditemwt"
+            android:id="@+id/chemicalitemwt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Item weight"
             android:layout_marginBottom="10dp"
             android:inputType="number"/>
         <EditText
-            android:id="@+id/seednetqty"
+            android:id="@+id/chemicalnetqty"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Netqty"
             android:layout_marginBottom="10dp"
             android:inputType="number"/>
+
+        <EditText
+            android:id="@+id/chemicaluse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="How to use"
+            android:layout_marginBottom="10dp"
+            android:inputType="textLongMessage"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -116,12 +120,12 @@
             android:orientation="horizontal"
             android:gravity="center">
             <ImageView
-                android:id="@+id/seedimg"
+                android:id="@+id/chemicalimg"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:src="@drawable/ic_launcher_background"/>
             <Button
-                android:id="@+id/seedimgbtn"
+                android:id="@+id/chemicalimgbtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Show image"
@@ -130,7 +134,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/seedaddbtn"
+            android:id="@+id/chemicaladdbtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Add"
