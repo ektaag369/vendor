@@ -5,23 +5,157 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/vendor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Vendor"/>
-    <Button
-        android:id="@+id/MachineLender"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Machine Lender"/>
-    <Button
-        android:id="@+id/PostHarvester"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Post Harvester"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/modulesbg"
+        android:scaleType="centerCrop"
+
+
+        />
+
+    <androidx.cardview.widget.CardView
+
+        android:layout_marginBottom="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:cardBackgroundColor="@color/white"
+        android:layout_marginTop="-50dp"
+        app:cardCornerRadius="11dp"
+        app:cardElevation="11dp"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:layout_marginVertical="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/vendor"
+                android:paddingHorizontal="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/login_button"
+                android:text="Vendor"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:text="This is vendor module"
+                android:textSize="10dp"
+                android:layout_alignStart="@+id/vendor"
+                android:layout_below="@+id/vendor"
+                />
+
+            <ImageView
+                android:id="@+id/vlogo"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/vendor"
+
+                />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginBottom="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:cardBackgroundColor="@color/white"
+        android:layout_marginTop="-50dp"
+        app:cardCornerRadius="11dp"
+        app:cardElevation="11dp"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:layout_marginVertical="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/MachineLender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Machine Lender"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/login_button"
+
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:text="This is machine lender module"
+                android:textSize="10dp"
+                android:layout_alignStart="@+id/MachineLender"
+                android:layout_below="@+id/MachineLender"
+                />
+
+            <ImageView
+                android:id="@+id/mlogo"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/machine"
+
+                />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:cardBackgroundColor="@color/white"
+        android:layout_marginTop="-50dp"
+        app:cardCornerRadius="11dp"
+        app:cardElevation="11dp"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:layout_marginVertical="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/PostHarvester"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/login_button"
+                android:text="Post Harvester"
+
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:text="This is machine lender module"
+                android:textSize="10dp"
+                android:layout_alignStart="@+id/PostHarvester"
+                android:layout_below="@+id/PostHarvester"
+                />
+
+            <ImageView
+                android:id="@+id/hlogo"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/harvester"
+
+                />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
 
 
 </LinearLayout>

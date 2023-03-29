@@ -12,18 +12,29 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="40dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/addseedbg"
+        android:scaleType="centerCrop">
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/addseedbg"
+            android:scaleType="centerCrop"
+            />
         <EditText
+            android:layout_marginTop="-250dp"
             android:id="@+id/seedid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="SeedID"
             android:layout_marginBottom="10dp"
             android:maxLines="1"
-            android:inputType="text"/>
+            android:inputType="text"
+            android:background="@drawable/addseedinput"
+            android:padding="6dp"/>
 
         <EditText
             android:id="@+id/seedname"
@@ -31,28 +42,37 @@
             android:layout_height="wrap_content"
             android:hint="SeedName"
             android:layout_marginBottom="10dp"
-            android:inputType="text"/>
+            android:inputType="text"
+            android:background="@drawable/addseedinput"
+            android:padding="6dp"
+            />
         <EditText
             android:id="@+id/seeddescription"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:hint="SeedDescription"
             android:layout_marginBottom="10dp"
-            android:inputType="textLongMessage"/>
+            android:inputType="textLongMessage"
+            android:background="@drawable/addseedinput"
+            android:padding="6dp"/>
         <EditText
             android:id="@+id/seedvariety"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="SeedVariety"
             android:layout_marginBottom="10dp"
-            android:inputType="text"/>
+            android:inputType="text"
+            android:background="@drawable/addseedinput"
+            android:padding="6dp"/>
         <EditText
             android:id="@+id/seedprice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="SeedPrice"
             android:layout_marginBottom="10dp"
-            android:inputType="number"/>
+            android:inputType="number"
+            android:background="@drawable/addseedinput"
+            android:padding="6dp"/>
 
         <EditText
             android:id="@+id/seedbrandname"
@@ -61,7 +81,9 @@
             android:hint="BrandName"
             android:layout_marginBottom="10dp"
             android:maxLines="1"
-            android:inputType="text"/>
+            android:inputType="text"
+            android:background="@drawable/addseedinput"
+            android:padding="6dp"/>
 
         <EditText
             android:id="@+id/seedmonth"
@@ -69,14 +91,18 @@
             android:layout_height="wrap_content"
             android:hint="Month of harvesting"
             android:layout_marginBottom="10dp"
-            android:inputType="number"/>
+            android:inputType="number"
+            android:background="@drawable/addseedinput"
+            android:padding="6dp"/>
         <EditText
             android:id="@+id/seedyear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Year of harvesting"
             android:layout_marginBottom="10dp"
-            android:inputType="number"/>
+            android:inputType="number"
+            android:background="@drawable/addseedinput"
+            android:padding="6dp"/>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -87,12 +113,13 @@
                 android:layout_height="wrap_content"
                 android:text="In Stock "
                 android:layout_marginBottom="10dp"
-                android:inputType="text"/>
+                android:inputType="text"
+                />
             <Spinner
                 android:id="@+id/seedspinnerstock"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"/>
+                />
         </LinearLayout>
 
         <EditText
@@ -101,14 +128,18 @@
             android:layout_height="wrap_content"
             android:hint="Item weight"
             android:layout_marginBottom="10dp"
-            android:inputType="number"/>
+            android:inputType="number"
+            android:background="@drawable/addseedinput"
+            android:padding="6dp"/>
         <EditText
             android:id="@+id/seednetqty"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Netqty"
             android:layout_marginBottom="10dp"
-            android:inputType="number"/>
+            android:inputType="number"
+            android:background="@drawable/addseedinput"
+            android:padding="6dp"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -117,11 +148,16 @@
             android:gravity="center">
             <ImageView
                 android:id="@+id/seedimg"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:src="@drawable/ic_launcher_background"/>
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/upload"
+                android:background="@drawable/edittext_bg"
+                android:padding="10dp"/>
             <Button
                 android:id="@+id/seedimgbtn"
+                android:background="@drawable/edittext_bg"
+                android:textColor="@color/darkgreen"
+                android:paddingHorizontal="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Show image"
@@ -134,8 +170,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Add"
+            android:layout_gravity="center"
+            android:background="@drawable/addseedbtn"
             android:textColor="@color/white"
-            android:layout_gravity="center"/>
+            android:paddingHorizontal="40dp"
+            />
+
+
     </LinearLayout>
 
 </ScrollView>
