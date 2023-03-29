@@ -15,6 +15,15 @@
         android:theme="@style/Theme.Vendor"
         tools:targetApi="31">
         <activity
+            android:name=".MachineDashboard"
+            android:exported="false" />
+        <activity
+            android:name=".MachineRent.MachineDetails"
+            android:exported="false" />
+        <activity
+            android:name=".MachineRent.MachineRenterDetails"
+            android:exported="false" />
+        <activity
             android:name=".Chemicals.ChemicalDetailActivity"
             android:exported="false" />
         <activity
