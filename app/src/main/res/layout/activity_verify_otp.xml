@@ -12,14 +12,19 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical">
-
+        <ImageView
+            android:layout_width="match_parent"
+            android:scaleType="centerCrop"
+            android:layout_height="250dp"
+            android:src="@drawable/login"
+            />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="0dp"
+            android:layout_marginTop="20dp"
             android:text="Enter OTP"
-            android:textColor="@color/black"
-            android:textSize="24sp"
+            android:textColor="#67A238"
+            android:textSize="30sp"
             android:textStyle="bold" />
 
 
@@ -128,24 +133,39 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <EditText
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:letterSpacing="1"
-            android:padding="12dp"
-            android:maxLength="6"
-            android:inputType="number"
-            android:textColor="@color/black"
-            android:id="@+id/otpBox"
-            android:layout_marginTop="12dp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:hint="123456"/>
+            app:cardElevation="10dp"
+            app:cardCornerRadius="20dp"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardMaxElevation="12dp"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="true">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:letterSpacing="1"
+                android:padding="12dp"
+                android:maxLength="6"
+                android:inputType="number"
+                android:textColor="#67A238"
+                android:id="@+id/otpBox"
+                android:layout_marginTop="12dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:hint="123456" />
+        </androidx.cardview.widget.CardView>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -160,6 +180,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Resend OTP"
+                android:textColor="#67A238"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -178,7 +199,8 @@
                 android:layout_marginTop="25dp"
                 android:gravity="center"
                 android:text="VERIFY"
-                android:textColor="@color/black"
+                android:background="@drawable/login_button"
+                android:textColor="@color/white"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
