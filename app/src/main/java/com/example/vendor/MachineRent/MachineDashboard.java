@@ -69,5 +69,4 @@ public class MachineDashboard extends AppCompatActivity {
         transaction.commit();
     }
 }
-    }
-}
+

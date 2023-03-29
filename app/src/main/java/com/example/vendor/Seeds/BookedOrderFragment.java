@@ -63,6 +63,8 @@ public class BookedOrderFragment extends Fragment {
                             List<DocumentSnapshot> list=queryDocumentSnapshots.getDocuments();
                             for(DocumentSnapshot d:list){
                                 SeedOrdersModel c=d.toObject(SeedOrdersModel.class);
+                                String documentId=d.getId();
+                                c.setDocumentId(documentId);
                                 orderlist.add(c);
 
 
