@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context=".AddSeeds">
+    tools:context=".VendorModule.Seeds.AddSeeds">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,7 +13,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="40dp"
         android:orientation="vertical">
 
         <EditText
@@ -54,30 +54,6 @@
             android:layout_marginBottom="10dp"
             android:inputType="number"/>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
-            <ImageView
-                android:id="@+id/seedimg"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:src="@drawable/ic_launcher_background"/>
-            <Button
-                android:id="@+id/seedimgbtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Show image"
-                android:layout_marginLeft="10dp"/>
-            <Button
-                android:id="@+id/uploadimgbtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Upload image"
-                android:layout_marginLeft="10dp"/>
-
-        </LinearLayout>
         <EditText
             android:id="@+id/seedbrandname"
             android:layout_width="match_parent"
@@ -88,10 +64,17 @@
             android:inputType="text"/>
 
         <EditText
-            android:id="@+id/seedtimeperiod"
+            android:id="@+id/seedmonth"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Month and year of harvesting"
+            android:hint="Month of harvesting"
+            android:layout_marginBottom="10dp"
+            android:inputType="number"/>
+        <EditText
+            android:id="@+id/seedyear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Year of harvesting"
             android:layout_marginBottom="10dp"
             android:inputType="number"/>
         <LinearLayout
@@ -126,6 +109,25 @@
             android:hint="Netqty"
             android:layout_marginBottom="10dp"
             android:inputType="number"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/seedimg"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/ic_launcher_background"/>
+            <Button
+                android:id="@+id/seedimgbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Show image"
+                android:layout_marginLeft="10dp"/>
+
+        </LinearLayout>
 
         <Button
             android:id="@+id/seedaddbtn"

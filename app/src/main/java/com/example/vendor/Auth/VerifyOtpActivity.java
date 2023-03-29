@@ -1,4 +1,4 @@
-package com.example.vendor;
+package com.example.vendor.Auth;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +12,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.vendor.MainActivity;
+import com.example.vendor.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
@@ -64,7 +66,7 @@ public class VerifyOtpActivity extends AppCompatActivity {
                                         verifyotp.setVisibility(View.VISIBLE);
                                         if(task.isSuccessful()){
                                             Toast.makeText(VerifyOtpActivity.this, "OTP verified successfully", Toast.LENGTH_SHORT).show();
-                                            Intent i=new Intent(VerifyOtpActivity.this, VendorDetails.class);
+                                            Intent i=new Intent(VerifyOtpActivity.this, MainActivity.class);
                                             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                             startActivity(i);
                                         }else{

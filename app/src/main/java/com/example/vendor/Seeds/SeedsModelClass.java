@@ -1,6 +1,4 @@
-package com.example.vendor;
-
-import java.util.ArrayList;
+package com.example.vendor.Seeds;
 
 public class SeedsModelClass {
 
@@ -8,28 +6,28 @@ public class SeedsModelClass {
     String BrandName;
     String SeedName;
     String SeedDescription;
-    String TimePeriod;
-    Double ItemWeight;
-    Integer NetQuantity;
-    Boolean StockStatus;
-    Double Price;
+    String Timeperiod;
+    String ItemWeight;
+    String NetQuantity;
+    String StockStatus;
+    double Price;
     String VendorID;
     String Variety;
-    String SeedImg;
+    String ImageUrl;
 
-    public SeedsModelClass(String seedID, String brandName, String seedName, String seedDescription, String timePeriod, Double itemWeight, Integer netQuantity, Boolean stockStatus, Double price, String vendorID, String variety, String seedimg) {
+    public SeedsModelClass(String seedID, String brandName, String seedName, String seedDescription, String timeperiod, String itemWeight, String netQuantity, String stockStatus, double price, String vendorID, String variety, String imageUrl) {
         SeedID = seedID;
         BrandName = brandName;
         SeedName = seedName;
         SeedDescription = seedDescription;
-        TimePeriod = timePeriod;
+        Timeperiod = timeperiod;
         ItemWeight = itemWeight;
         NetQuantity = netQuantity;
         StockStatus = stockStatus;
         Price = price;
         VendorID = vendorID;
-        Variety=variety;
-        SeedImg=seedimg;
+        Variety = variety;
+        ImageUrl = imageUrl;
     }
 
     public SeedsModelClass() {
@@ -67,43 +65,43 @@ public class SeedsModelClass {
         SeedDescription = seedDescription;
     }
 
-    public String getTimePeriod() {
-        return TimePeriod;
+    public String getTimeperiod() {
+        return Timeperiod;
     }
 
-    public void setTimePeriod(String timePeriod) {
-        TimePeriod = timePeriod;
+    public void setTimeperiod(String timeperiod) {
+        Timeperiod = timeperiod;
     }
 
-    public Double getItemWeight() {
+    public String getItemWeight() {
         return ItemWeight;
     }
 
-    public void setItemWeight(Double itemWeight) {
+    public void setItemWeight(String itemWeight) {
         ItemWeight = itemWeight;
     }
 
-    public Integer getNetQuantity() {
+    public String getNetQuantity() {
         return NetQuantity;
     }
 
-    public void setNetQuantity(Integer netQuantity) {
+    public void setNetQuantity(String netQuantity) {
         NetQuantity = netQuantity;
     }
 
-    public Boolean getStockStatus() {
+    public String getStockStatus() {
         return StockStatus;
     }
 
-    public void setStockStatus(Boolean stockStatus) {
+    public void setStockStatus(String stockStatus) {
         StockStatus = stockStatus;
     }
 
-    public Double getPrice() {
+    public double getPrice() {
         return Price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(double price) {
         Price = price;
     }
 
@@ -123,11 +121,11 @@ public class SeedsModelClass {
         Variety = variety;
     }
 
-    public String getSeedImg() {
-        return SeedImg;
+    public String getImageUrl() {
+        return ImageUrl;
     }
 
-    public void setSeedImg(String seedImg) {
-        SeedImg = seedImg;
+    public void setImageUrl(String imageUrl) {
+        ImageUrl = imageUrl;
     }
 }

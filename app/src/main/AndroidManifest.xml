@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -15,22 +15,37 @@
         android:theme="@style/Theme.Vendor"
         tools:targetApi="31">
         <activity
-            android:name=".AddSeeds"
+            android:name=".Chemicals.ChemicalDashboard"
             android:exported="false" />
         <activity
-            android:name=".VendorDetails"
+            android:name=".Seeds.SeedDashboardActivity"
             android:exported="false" />
         <activity
-            android:name=".VerifyOtpActivity"
+            android:name=".Chemicals.ShowChemicals"
             android:exported="false" />
         <activity
-            android:name=".PhoneActivity"
+            android:name=".Seeds.ShowSeeds"
+            android:exported="false" />
+        <activity
+            android:name=".Seeds.AddSeeds"
+            android:exported="false" />
+        <activity
+            android:name=".Vendor.VendorDetails"
+            android:exported="false" />
+        <activity
+            android:name=".Vendor.VendorDashboard"
+            android:exported="false" />
+        <activity
+            android:name=".Auth.VerifyOtpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Auth.PhoneActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".Auth.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

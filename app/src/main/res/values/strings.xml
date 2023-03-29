@@ -1,14 +1,12 @@
 <resources>
     <string name="app_name">vendor</string>
-    <string-array name="gender">
-        <item>Male</item>
-        <item>Female</item>
-        <item>Other</item>
-    </string-array>
 
     <string-array name="stock">
-        <item>true</item>
-        <item>false</item>
-
+        <item>In Stock</item>
+        <item>Out of Stock</item>
     </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
