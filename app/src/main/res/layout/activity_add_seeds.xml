@@ -3,37 +3,38 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Seeds.AddSeeds">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="40dp"
-        android:orientation="vertical"
-        android:background="@drawable/addseedbg"
-        android:scaleType="centerCrop">
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/addseedbg"
-            android:scaleType="centerCrop"
-            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Seed Details"
+            android:textColor="@color/darkgreen"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
+
         <EditText
-            android:layout_marginTop="-250dp"
             android:id="@+id/seedid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="SeedID"
             android:layout_marginBottom="10dp"
+            android:background="@color/white"
             android:maxLines="1"
+            android:textColorHint="@color/lightgreen"
+            android:textColor="@color/black"
             android:inputType="text"
-            android:background="@drawable/addseedinput"
             android:padding="6dp"/>
 
         <EditText
@@ -41,9 +42,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="SeedName"
+            android:textColorHint="@color/lightgreen"
+            android:textColor="@color/black"
+            android:background="@color/white"
             android:layout_marginBottom="10dp"
             android:inputType="text"
-            android:background="@drawable/addseedinput"
             android:padding="6dp"
             />
         <EditText
@@ -51,27 +54,33 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:hint="SeedDescription"
+            android:textColorHint="@color/lightgreen"
+            android:textColor="@color/black"
+            android:background="@color/white"
             android:layout_marginBottom="10dp"
-            android:inputType="textLongMessage"
-            android:background="@drawable/addseedinput"
+            android:inputType="textMultiLine"
             android:padding="6dp"/>
         <EditText
             android:id="@+id/seedvariety"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="SeedVariety"
+            android:textColorHint="@color/lightgreen"
+            android:textColor="@color/black"
+            android:background="@color/white"
             android:layout_marginBottom="10dp"
             android:inputType="text"
-            android:background="@drawable/addseedinput"
             android:padding="6dp"/>
         <EditText
             android:id="@+id/seedprice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="SeedPrice"
+            android:textColorHint="@color/lightgreen"
+            android:textColor="@color/black"
+            android:background="@color/white"
             android:layout_marginBottom="10dp"
             android:inputType="number"
-            android:background="@drawable/addseedinput"
             android:padding="6dp"/>
 
         <EditText
@@ -79,10 +88,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="BrandName"
+            android:textColorHint="@color/lightgreen"
+            android:textColor="@color/black"
             android:layout_marginBottom="10dp"
             android:maxLines="1"
+            android:background="@color/white"
             android:inputType="text"
-            android:background="@drawable/addseedinput"
             android:padding="6dp"/>
 
         <EditText
@@ -90,18 +101,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Month of harvesting"
+            android:textColorHint="@color/lightgreen"
+            android:textColor="@color/black"
             android:layout_marginBottom="10dp"
             android:inputType="number"
-            android:background="@drawable/addseedinput"
+            android:background="@color/white"
             android:padding="6dp"/>
         <EditText
             android:id="@+id/seedyear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Year of harvesting"
+            android:background="@color/white"
+            android:textColorHint="@color/lightgreen"
+            android:textColor="@color/black"
             android:layout_marginBottom="10dp"
             android:inputType="number"
-            android:background="@drawable/addseedinput"
             android:padding="6dp"/>
         <LinearLayout
             android:layout_width="wrap_content"
@@ -112,6 +127,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="In Stock "
+                android:padding="6dp"
+                android:textColor="@color/black"
                 android:layout_marginBottom="10dp"
                 android:inputType="text"
                 />
@@ -127,25 +144,30 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Item weight"
+            android:textColorHint="@color/lightgreen"
+            android:textColor="@color/black"
+            android:background="@color/white"
             android:layout_marginBottom="10dp"
             android:inputType="number"
-            android:background="@drawable/addseedinput"
             android:padding="6dp"/>
         <EditText
             android:id="@+id/seednetqty"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Netqty"
+            android:textColorHint="@color/lightgreen"
+            android:textColor="@color/black"
+            android:background="@color/white"
             android:layout_marginBottom="10dp"
             android:inputType="number"
-            android:background="@drawable/addseedinput"
             android:padding="6dp"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="center">
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp">
             <ImageView
                 android:id="@+id/seedimg"
                 android:layout_width="100dp"
@@ -155,12 +177,13 @@
                 android:padding="10dp"/>
             <Button
                 android:id="@+id/seedimgbtn"
-                android:background="@drawable/edittext_bg"
-                android:textColor="@color/darkgreen"
+                android:textColor="@color/white"
                 android:paddingHorizontal="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Show image"
+                android:layout_gravity="center"
+                android:background="@drawable/login_button"
                 android:layout_marginLeft="10dp"/>
 
         </LinearLayout>
@@ -170,6 +193,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Add"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:layout_gravity="center"
             android:background="@drawable/addseedbtn"
             android:textColor="@color/white"

@@ -54,7 +54,7 @@ public class BookedOrderFragment extends Fragment {
         return view;
     }
     private void getOrders() {
-        firestore.collection("Vendors").document(vendorid).collection("Orders").get()
+        firestore.collection("Vendors").document(vendorid).collection("Orders").whereEqualTo("Order_Status","Order Placed").get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
@@ -72,6 +72,7 @@ public class BookedOrderFragment extends Fragment {
                             adapter.notifyDataSetChanged();
                         }
                         else{
+                            progressDialog.dismiss();
                             Toast.makeText(getContext(), "No data found", Toast.LENGTH_SHORT).show();
                         }
                     }

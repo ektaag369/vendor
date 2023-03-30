@@ -13,44 +13,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="10dp"
         android:layout_below="@+id/rel_layout">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Welcome to the Seed Module!"
-            android:textColor="@color/darkgreen"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            android:layout_gravity="center"/>
-        <androidx.cardview.widget.CardView
+        <ImageView
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-            app:cardElevation="10dp"
-            app:cardCornerRadius="20dp"
-            android:layout_margin="3dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardMaxElevation="12dp"
-            app:cardPreventCornerOverlap="true"
-            app:cardUseCompatPadding="true">
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:layout_marginTop="-10dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/seeddash"/>
-        </androidx.cardview.widget.CardView>
+            android:layout_height="wrap_content"
+            android:src="@drawable/seedextrabg"
+            android:layout_marginTop="-90dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginTop="-50dp">
             <androidx.cardview.widget.CardView
                 android:id="@+id/sellseedcard"
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 app:cardElevation="10dp"
-                app:cardCornerRadius="20dp"
+                app:cardCornerRadius="10dp"
                 android:layout_marginLeft="5dp"
                 app:cardBackgroundColor="@color/white"
                 app:cardMaxElevation="12dp"
@@ -81,7 +61,7 @@
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 app:cardElevation="10dp"
-                app:cardCornerRadius="20dp"
+                app:cardCornerRadius="10dp"
                 android:layout_marginRight="5dp"
                 app:cardBackgroundColor="@color/white"
                 app:cardMaxElevation="12dp"

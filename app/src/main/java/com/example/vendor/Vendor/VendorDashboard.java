@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 
+import com.example.vendor.Chemicals.ChemicalDashboard;
 import com.example.vendor.R;
 import com.example.vendor.Seeds.SeedDashboardActivity;
 
@@ -33,8 +34,8 @@ public class VendorDashboard extends AppCompatActivity {
         ChemicalModule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent i=new Intent(VendorDashboard.this, ChemicalDashboard.class);
-//                startActivity(i);
+                Intent i=new Intent(VendorDashboard.this, ChemicalDashboard.class);
+                startActivity(i);
             }
         });
 

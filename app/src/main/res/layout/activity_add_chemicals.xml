@@ -10,11 +10,18 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="40dp"
+        android:layout_margin="10dp"
         android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chemical Details"
+            android:textColor="@color/darkgreen"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
 
         <EditText
             android:id="@+id/chemicalid"
@@ -23,6 +30,9 @@
             android:hint="ChemicalID"
             android:layout_marginBottom="10dp"
             android:maxLines="1"
+            android:background="@color/white"
+            android:textColorHint="@color/lightgreen"
+            android:textColor="@color/black"
             android:inputType="text"/>
 
         <EditText
@@ -30,6 +40,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="ChemicalName"
+            android:background="@color/white"
+            android:textColorHint="@color/lightgreen"
+            android:textColor="@color/black"
             android:layout_marginBottom="10dp"
             android:inputType="text"/>
         <EditText
@@ -38,7 +51,10 @@
             android:layout_height="100dp"
             android:hint="chemicalDescription"
             android:layout_marginBottom="10dp"
-            android:inputType="textLongMessage"/>
+            android:background="@color/white"
+            android:textColorHint="@color/lightgreen"
+            android:textColor="@color/black"
+            android:inputType="textMultiLine"/>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -48,6 +64,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Fertilizers"
+                android:background="@color/white"
+                android:textColorHint="@color/lightgreen"
+                android:textColor="@color/black"
                 android:layout_marginBottom="10dp"
                 android:inputType="text"/>
             <Spinner
@@ -61,6 +80,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="chemicalPrice"
+            android:background="@color/white"
+            android:textColorHint="@color/lightgreen"
+            android:textColor="@color/black"
             android:layout_marginBottom="10dp"
             android:inputType="number"/>
 
@@ -69,6 +91,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="BrandName"
+            android:background="@color/white"
+            android:textColorHint="@color/lightgreen"
+            android:textColor="@color/black"
             android:layout_marginBottom="10dp"
             android:maxLines="1"
             android:inputType="text"/>
@@ -82,6 +107,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="In Stock "
+                android:background="@color/white"
+                android:textColorHint="@color/lightgreen"
+                android:textColor="@color/black"
                 android:layout_marginBottom="10dp"
                 android:inputType="text"/>
             <Spinner
@@ -96,6 +124,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Item weight"
+            android:background="@color/white"
+            android:textColorHint="@color/lightgreen"
+            android:textColor="@color/black"
             android:layout_marginBottom="10dp"
             android:inputType="number"/>
         <EditText
@@ -103,6 +134,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Netqty"
+            android:background="@color/white"
+            android:textColorHint="@color/lightgreen"
+            android:textColor="@color/black"
             android:layout_marginBottom="10dp"
             android:inputType="number"/>
 
@@ -111,6 +145,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="How to use"
+            android:background="@color/white"
+            android:textColorHint="@color/lightgreen"
+            android:textColor="@color/black"
             android:layout_marginBottom="10dp"
             android:inputType="textLongMessage"/>
 
@@ -118,26 +155,31 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="center">
+            android:layout_gravity="center">
             <ImageView
                 android:id="@+id/chemicalimg"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:src="@drawable/ic_launcher_background"/>
+                android:background="@drawable/edittext_bg"
+                android:src="@drawable/upload"/>
             <Button
                 android:id="@+id/chemicalimgbtn"
-                android:layout_width="wrap_content"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="Show image"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:background="@drawable/login_button"
                 android:layout_marginLeft="10dp"/>
 
         </LinearLayout>
 
         <Button
             android:id="@+id/chemicaladdbtn"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="Add"
+            android:background="@drawable/login_button"
             android:textColor="@color/white"
             android:layout_gravity="center"/>
     </LinearLayout>

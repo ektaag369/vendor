@@ -17,6 +17,16 @@
             android:scaleType="centerCrop"
             android:layout_marginTop="-5dp"/>
 
+        <ImageView
+            android:id="@+id/img2"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="-15dp"
+            android:src="@drawable/extrabg" />
+
         <androidx.cardview.widget.CardView
             android:id="@+id/card1"
             android:layout_width="100dp"
@@ -128,10 +138,10 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            android:src="@drawable/profilebgtwo"
-            android:scaleType="centerCrop"
             android:layout_alignParentBottom="true"
-            android:layout_marginTop="-5dp"/>
+            android:layout_marginTop="-5dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/profilebgtwo" />
     </RelativeLayout>
 
 

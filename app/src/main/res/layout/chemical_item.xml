@@ -1,26 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="165dp"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@android:color/transparent">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_margin="6dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:cardCornerRadius="12dp"
         app:cardElevation="10dp">
         <LinearLayout
             android:id="@+id/chemicallinearlayouttouch"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="6dp"
             android:orientation="vertical">
             <ImageView
                 android:id="@+id/chemicalimgrv"
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
+                android:layout_height="200dp"
                 android:layout_gravity="center"
+                android:padding="10dp"
+                android:layout_margin="10dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_launcher_background" />
             <TextView
@@ -44,8 +48,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Rs "
-                    android:textColor="@color/darkgreen"
                     android:textSize="14sp"
+                    android:textColor="@color/black"
                     android:textStyle="bold" />
 
                 <TextView
@@ -53,22 +57,38 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="34"
-                    android:textColor="@color/darkgreen"
+                    android:textColor="@color/black"
                     android:textSize="16sp"
                     android:textStyle="bold" />
             </LinearLayout>
-
-            <TextView
-                android:id="@+id/chemicalcategoryrv"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Chemical Category"
-                android:textColor="@color/black"
-                android:layout_marginLeft="5dp"
-                android:textSize="14sp"/>
+                android:orientation="horizontal"
+                android:layout_marginBottom="4dp">
+                <TextView
+                    android:id="@+id/hjkl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Category:"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:textSize="14sp"/>
+                <TextView
+                    android:id="@+id/chemicalcategoryrv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chemical Category"
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="5dp"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+
 
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 
-</RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
