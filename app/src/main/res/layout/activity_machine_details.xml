@@ -37,7 +37,7 @@
             android:layout_height="100dp"
             android:hint="MachineDetails"
             android:layout_marginBottom="10dp"
-            android:inputType="textLongMessage"/>
+            android:inputType="textMultiLine"/>
         <EditText
             android:id="@+id/mrate"
             android:layout_width="match_parent"
