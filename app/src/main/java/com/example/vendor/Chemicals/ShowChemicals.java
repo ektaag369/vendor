@@ -1,18 +1,17 @@
-package com.example.vendor.Seeds;
+package com.example.vendor.Chemicals;
 
-import android.app.ProgressDialog;
-import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.app.ProgressDialog;
+import android.os.Bundle;
 import android.widget.Toast;
 
 import com.example.vendor.R;
+import com.example.vendor.Seeds.SeedsAdapterClass;
+import com.example.vendor.Seeds.SeedsModelClass;
+import com.example.vendor.Seeds.ShowSeeds;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -22,39 +21,37 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BookedOrderFragment extends Fragment {
+public class ShowChemicals extends AppCompatActivity {
     FirebaseFirestore firestore=FirebaseFirestore.getInstance();
     RecyclerView recyclerView;
-    ArrayList<SeedOrdersModel> orderlist=new ArrayList<>();
-    SeedOrderAdapter adapter;
+    ArrayList<ChemicalModelClass> chemicallist=new ArrayList<>();
+    ChemicalAdapter adapter;
     FirebaseAuth mauth;
     String vendorid;
     ProgressDialog progressDialog;
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view=inflater.inflate(R.layout.fragment_booked_order, container, false);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_show_chemicals);
 
-        recyclerView=view.findViewById(R.id.seeds_order_rv);
+        recyclerView=findViewById(R.id.chemicals_rv);
         mauth=FirebaseAuth.getInstance();
         vendorid=mauth.getCurrentUser().getUid();
 
-        progressDialog=new ProgressDialog(getContext());
-        progressDialog.setTitle("Orders");
+        progressDialog=new ProgressDialog(this);
+        progressDialog.setTitle("Chemicals");
         progressDialog.setMessage("Loading Data");
         progressDialog.show();
 
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new GridLayoutManager(getContext(),1));
-        adapter=new SeedOrderAdapter(getContext(),orderlist);
+        recyclerView.setLayoutManager(new GridLayoutManager(this,2));
+        adapter=new ChemicalAdapter(this,chemicallist);
         recyclerView.setAdapter(adapter);
-        getOrders();
-        return view;
+        getChemicals();
     }
-    private void getOrders() {
-        firestore.collection("Vendors").document(vendorid).collection("Orders").get()
+
+    private void getChemicals() {
+        firestore.collection("Chemicals").whereEqualTo("VendorID",vendorid).get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
@@ -62,15 +59,15 @@ public class BookedOrderFragment extends Fragment {
                             progressDialog.dismiss();
                             List<DocumentSnapshot> list=queryDocumentSnapshots.getDocuments();
                             for(DocumentSnapshot d:list){
-                                SeedOrdersModel c=d.toObject(SeedOrdersModel.class);
-                                orderlist.add(c);
+                                ChemicalModelClass c=d.toObject(ChemicalModelClass.class);
+                                chemicallist.add(c);
 
 
                             }
                             adapter.notifyDataSetChanged();
                         }
                         else{
-                            Toast.makeText(getContext(), "No data found", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ShowChemicals.this, "No data found", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

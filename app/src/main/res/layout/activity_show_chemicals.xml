@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Seeds.ShowSeeds">
+    tools:context=".Chemicals.ShowChemicals">
 
     <RelativeLayout
         android:id="@+id/rel_layout"
@@ -19,17 +19,16 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
-            android:text="Your Seeds"
+            android:text="Your Chemicals"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold" />
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/seeds_rv"
+        android:id="@+id/chemicals_rv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"/>
-
 
 </LinearLayout>

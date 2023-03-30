@@ -1,4 +1,4 @@
-package com.example.vendor.Vendor;
+package com.example.vendor.MachineRent;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,15 +20,13 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.vendor.Chemicals.AddChemicals;
 import com.example.vendor.R;
-import com.google.android.gms.tasks.OnCompleteListener;
+import com.example.vendor.Vendor.VendorDashboard;
+import com.example.vendor.Vendor.VendorDetails;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
@@ -44,41 +42,41 @@ import com.karumi.dexter.listener.single.PermissionListener;
 import java.io.InputStream;
 import java.util.HashMap;
 
-public class VendorDetails extends AppCompatActivity {
-
-    EditText user_name, user_phone, user_address;
+public class MachineRenterDetails extends AppCompatActivity {
+    EditText tname, tphone, taddress;
     Button submit, showimg;
-    ImageView vendorimg;
+    ImageView timage;
     FirebaseAuth mAuth;
     FirebaseFirestore firestore=FirebaseFirestore.getInstance();
     Uri filepath;
     Bitmap bitmap;
-    String vendorimgurl;
+    String imageurl;
     String userid;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_vendor_details);
+        setContentView(R.layout.activity_machine_renter_details);
 
-        user_name = findViewById(R.id.user_name);
-        user_phone = findViewById(R.id.user_phone);
-        user_address = findViewById(R.id.user_address);
-        submit = findViewById(R.id.submit_btn);
-        showimg=findViewById(R.id.vendorimgbtn);
-        vendorimg=findViewById(R.id.vendorimg);
+        tname = findViewById(R.id.renter_name);
+        tphone = findViewById(R.id.renter_phone);
+        taddress = findViewById(R.id.renter_address);
+        submit = findViewById(R.id.renter_Submit_btn);
+        showimg=findViewById(R.id.rentershowimg);
+        timage=findViewById(R.id.renterimg);
 
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser currentuser = mAuth.getCurrentUser();
         userid = currentuser.getUid();
-        ProgressDialog pd=new ProgressDialog(VendorDetails.this);
+
+        ProgressDialog pd=new ProgressDialog(MachineRenterDetails.this);
         pd.show();
-        firestore.collection("Vendors").document(userid).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+
+        firestore.collection("MachineLender").document(userid).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 if(documentSnapshot.exists()){
                     pd.dismiss();
-                    Intent i=new Intent(VendorDetails.this, VendorDashboard.class);
+                    Intent i=new Intent(MachineRenterDetails.this, MachineDetails.class);
                     startActivity(i);
                     finish();
                 }
@@ -87,7 +85,7 @@ public class VendorDetails extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Exception e) {
                 pd.dismiss();
-                Intent i=new Intent(VendorDetails.this,VendorDetails.class);
+                Intent i=new Intent(MachineRenterDetails.this,MachineRenterDetails.class);
                 startActivity(i);
 
             }
@@ -96,7 +94,7 @@ public class VendorDetails extends AppCompatActivity {
         showimg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Dexter.withActivity(VendorDetails.this)
+                Dexter.withActivity(MachineRenterDetails.this)
                         .withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
                         .withListener(new PermissionListener() {
                             @Override
@@ -124,11 +122,11 @@ public class VendorDetails extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (user_name.toString().isEmpty() || user_address.toString().isEmpty() ||
-                        user_phone.toString().isEmpty()) {
-                    Toast.makeText(VendorDetails.this, "Please fill all the details", Toast.LENGTH_SHORT).show();
+                if (tname.toString().isEmpty() || taddress.toString().isEmpty() ||
+                        tphone.toString().isEmpty()) {
+                    Toast.makeText(MachineRenterDetails.this, "Please fill all the details", Toast.LENGTH_SHORT).show();
                 } else {
-                     add_vendor(filepath);
+                    add_lendor(filepath);
                 }
             }
         });
@@ -141,7 +139,7 @@ public class VendorDetails extends AppCompatActivity {
             try{
                 InputStream inputStream=getContentResolver().openInputStream(filepath);
                 bitmap= BitmapFactory.decodeStream(inputStream);
-                vendorimg.setImageBitmap(bitmap);
+                timage.setImageBitmap(bitmap);
             }catch (Exception e){
 
             }
@@ -149,41 +147,41 @@ public class VendorDetails extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-    private void add_vendor(Uri filepath) {
-        ProgressDialog pd1=new ProgressDialog(VendorDetails.this);
+    private void add_lendor(Uri filepath) {
+        ProgressDialog pd1=new ProgressDialog(MachineRenterDetails.this);
         pd1.setCancelable(false);
         pd1.setMessage("Adding Details...");
         pd1.show();
 
-        String name = user_name.getText().toString();
-        String address = user_address.getText().toString();
-        String phone = user_phone.getText().toString();
+        String name = tname.getText().toString();
+        String address = taddress.getText().toString();
+        String phone = tphone.getText().toString();
 
-        HashMap<String, Object> vendordetails = new HashMap<>();
-        vendordetails.put("Name", name);
-        vendordetails.put("Address", address);
-        vendordetails.put("Phone", phone);
+        HashMap<String, Object> rentor = new HashMap<>();
+        rentor.put("Name", name);
+        rentor.put("Address", address);
+        rentor.put("Phone", phone);
 
         FirebaseStorage storage= FirebaseStorage.getInstance();
         String filename=getfilenamefromuri(filepath );
-        StorageReference vendoruploader=storage.getReference().child("/Vendorimages").child(filename);
+        StorageReference renteruploader=storage.getReference().child("/Lenderimages").child(filename);
 
-        vendoruploader.putFile(filepath).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+        renteruploader.putFile(filepath).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                vendoruploader.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                renteruploader.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override
                     public void onSuccess(Uri uri) {
-                        vendorimgurl=(String.valueOf(uri));
-                        vendordetails.put("ImageUrl",vendorimgurl);
-                        firestore.collection("Vendors").document(userid)
-                                .set(vendordetails)
+                        imageurl=(String.valueOf(uri));
+                        rentor.put("ImageUrl",imageurl);
+                        firestore.collection("MachineLender").document(userid)
+                                .set(rentor)
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void unused) {
                                         pd1.dismiss();
-                                        Toast.makeText(VendorDetails.this, "Added", Toast.LENGTH_SHORT).show();
-                                        Intent i=new Intent(VendorDetails.this, VendorDashboard.class);
+                                        Toast.makeText(MachineRenterDetails.this, "Added", Toast.LENGTH_SHORT).show();
+                                        Intent i=new Intent(MachineRenterDetails.this, MachineDetails.class);
                                         i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                         startActivity(i);
                                     }
@@ -191,7 +189,7 @@ public class VendorDetails extends AppCompatActivity {
                                     @Override
                                     public void onFailure(@NonNull Exception e) {
                                         pd1.dismiss();
-                                        Toast.makeText(VendorDetails.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(MachineRenterDetails.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                                     }
                                 });
                     }

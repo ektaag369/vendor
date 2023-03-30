@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context=".Vendor.VendorDetails">
+    tools:context=".MachineRent.MachineRenterDetails">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,7 +18,7 @@
         android:layout_marginTop="40dp"/>
 
     <EditText
-        android:id="@+id/user_name"
+        android:id="@+id/renter_name"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
@@ -34,7 +34,7 @@
         android:textColorHint="#838282"/>
 
     <EditText
-        android:id="@+id/user_phone"
+        android:id="@+id/renter_phone"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
@@ -50,7 +50,7 @@
         android:textColorHint="#838282"/>
 
     <EditText
-        android:id="@+id/user_address"
+        android:id="@+id/renter_address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -71,12 +71,12 @@
         android:orientation="horizontal"
         android:gravity="center">
         <ImageView
-            android:id="@+id/vendorimg"
+            android:id="@+id/renterimg"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:src="@drawable/ic_launcher_background"/>
         <Button
-            android:id="@+id/vendorimgbtn"
+            android:id="@+id/rentershowimg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Show image"
@@ -85,7 +85,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/submit_btn"
+        android:id="@+id/renter_Submit_btn"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="Submit"

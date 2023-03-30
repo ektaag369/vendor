@@ -1,16 +1,19 @@
 package com.example.vendor.Seeds;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.vendor.R;
+import com.example.vendor.Utility.Constants;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -18,6 +21,8 @@ import java.util.ArrayList;
 public class SeedsAdapterClass extends RecyclerView.Adapter<SeedsAdapterClass.SeedsViewHolder> {
     Context context;
     ArrayList<SeedsModelClass> seedslist;
+    Constants constants=new Constants();
+    Intent intent;
 
     public SeedsAdapterClass(Context context, ArrayList<SeedsModelClass> seedslist) {
         this.context = context;
@@ -46,6 +51,23 @@ public class SeedsAdapterClass extends RecyclerView.Adapter<SeedsAdapterClass.Se
         else{
             Picasso.get().load(R.drawable.ic_launcher_background).into(holder.image);
         }
+        holder.linearLayout.setOnClickListener(v-> {
+
+            intent = new Intent(context, SeedDetailActivity.class);
+            intent.putExtra(constants.SEED_NAME, seedslist.get(position).getSeedName());
+            intent.putExtra(constants.BRAND_NAME, seedslist.get(position).getBrandName());
+            intent.putExtra(constants.SEED_ID, seedslist.get(position).getSeedID());
+            intent.putExtra(constants.SEED_DESCRIPTION, seedslist.get(position).getSeedDescription());
+            intent.putExtra(constants.TIME_PERIOD, seedslist.get(position).getTimeperiod());
+            intent.putExtra(constants.ITEM_WEIGHT, seedslist.get(position).getItemWeight());
+            intent.putExtra(constants.NET_QUANTITY, seedslist.get(position).getNetQuantity());
+            intent.putExtra(constants.STOCK_STATUS, seedslist.get(position).getStockStatus());
+            intent.putExtra(constants.PRICE, seedslist.get(position).getPrice());
+            intent.putExtra(constants.SEED_VARIETY, seedslist.get(position).getVariety());
+            intent.putExtra(constants.VENDOR_ID, seedslist.get(position).getVendorID());
+            intent.putExtra(constants.SEED_iMAGE_URL, seedslist.get(position).getImageUrl());
+            context.startActivity(intent);
+        });
 
     }
 
@@ -57,12 +79,14 @@ public class SeedsAdapterClass extends RecyclerView.Adapter<SeedsAdapterClass.Se
     public class SeedsViewHolder extends RecyclerView.ViewHolder{
         TextView name,variety,price;
         ImageView image;
+        LinearLayout linearLayout;
         public SeedsViewHolder(@NonNull View itemView) {
             super(itemView);
             name=itemView.findViewById(R.id.seednamerv);
             variety=itemView.findViewById(R.id.seedvarietyrv);
             price=itemView.findViewById(R.id.seedpricerv);
             image=itemView.findViewById(R.id.seedimgrv);
+            linearLayout=itemView.findViewById(R.id.linearlayouttouch);
         }
     }
 }

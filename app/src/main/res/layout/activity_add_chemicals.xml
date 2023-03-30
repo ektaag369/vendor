@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Chemicals.AddChemicals">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="40dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/chemicalid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ChemicalID"
+            android:layout_marginBottom="10dp"
+            android:maxLines="1"
+            android:inputType="text"/>
+
+        <EditText
+            android:id="@+id/chemicalname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ChemicalName"
+            android:layout_marginBottom="10dp"
+            android:inputType="text"/>
+        <EditText
+            android:id="@+id/chemicaldescription"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:hint="chemicalDescription"
+            android:layout_marginBottom="10dp"
+            android:inputType="textLongMessage"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/chemicalcategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fertilizers"
+                android:layout_marginBottom="10dp"
+                android:inputType="text"/>
+            <Spinner
+                android:id="@+id/chemicalcategoryspinner"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"/>
+        </LinearLayout>
+        <EditText
+            android:id="@+id/chemicalprice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="chemicalPrice"
+            android:layout_marginBottom="10dp"
+            android:inputType="number"/>
+
+        <EditText
+            android:id="@+id/chemicalbrandname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="BrandName"
+            android:layout_marginBottom="10dp"
+            android:maxLines="1"
+            android:inputType="text"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/chemicalstockstatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="In Stock "
+                android:layout_marginBottom="10dp"
+                android:inputType="text"/>
+            <Spinner
+                android:id="@+id/chemicalspinnerstock"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"/>
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/chemicalitemwt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Item weight"
+            android:layout_marginBottom="10dp"
+            android:inputType="number"/>
+        <EditText
+            android:id="@+id/chemicalnetqty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Netqty"
+            android:layout_marginBottom="10dp"
+            android:inputType="number"/>
+
+        <EditText
+            android:id="@+id/chemicaluse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="How to use"
+            android:layout_marginBottom="10dp"
+            android:inputType="textLongMessage"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/chemicalimg"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/ic_launcher_background"/>
+            <Button
+                android:id="@+id/chemicalimgbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Show image"
+                android:layout_marginLeft="10dp"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/chemicaladdbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add"
+            android:textColor="@color/white"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+</ScrollView>
