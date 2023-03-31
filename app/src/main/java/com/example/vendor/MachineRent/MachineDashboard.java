@@ -30,7 +30,6 @@ public class MachineDashboard extends AppCompatActivity {
 
         meowBottomNavigation.add(new MeowBottomNavigation.Model(1,R.drawable.home));
         meowBottomNavigation.add(new MeowBottomNavigation.Model(2,R.drawable.orders));
-        meowBottomNavigation.add(new MeowBottomNavigation.Model(3,R.drawable.history));
         meowBottomNavigation.add(new MeowBottomNavigation.Model(4,R.drawable.profile));
 
         meowBottomNavigation.show(1,true);
@@ -46,10 +45,6 @@ public class MachineDashboard extends AppCompatActivity {
 
                     case 2:
                         replace(new BookedOrderFragment());
-                        break;
-
-                    case 3:
-                        replace(new HistoryOrderFragment());
                         break;
 
                     case 4:

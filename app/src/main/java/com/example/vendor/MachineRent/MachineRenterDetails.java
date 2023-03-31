@@ -43,7 +43,7 @@ import java.io.InputStream;
 import java.util.HashMap;
 
 public class MachineRenterDetails extends AppCompatActivity {
-    EditText tname, tphone, taddress;
+    EditText tname, tphone, tcity,tpost,tdistrict,tstate,tpincode;
     Button submit, showimg;
     ImageView timage;
     FirebaseAuth mAuth;
@@ -59,7 +59,11 @@ public class MachineRenterDetails extends AppCompatActivity {
 
         tname = findViewById(R.id.renter_name);
         tphone = findViewById(R.id.renter_phone);
-        taddress = findViewById(R.id.renter_address);
+        tcity = findViewById(R.id.renter_city);
+        tpost = findViewById(R.id.renter_post);
+        tdistrict = findViewById(R.id.renter_district);
+        tstate = findViewById(R.id.renter_state);
+        tpincode = findViewById(R.id.renter_pincode);
         submit = findViewById(R.id.renter_Submit_btn);
         showimg=findViewById(R.id.rentershowimg);
         timage=findViewById(R.id.renterimg);
@@ -76,9 +80,12 @@ public class MachineRenterDetails extends AppCompatActivity {
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 if(documentSnapshot.exists()){
                     pd.dismiss();
-                    Intent i=new Intent(MachineRenterDetails.this, MachineDetails.class);
+                    Intent i=new Intent(MachineRenterDetails.this, MachineDashboard.class);
                     startActivity(i);
                     finish();
+                }
+                else{
+                    pd.dismiss();
                 }
             }
         }).addOnFailureListener(new OnFailureListener() {
@@ -122,7 +129,11 @@ public class MachineRenterDetails extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (tname.toString().isEmpty() || taddress.toString().isEmpty() ||
+                if (tname.toString().isEmpty() || tcity.toString().isEmpty() ||
+                        tpost.toString().isEmpty() ||
+                        tdistrict.toString().isEmpty() ||
+                        tstate.toString().isEmpty() ||
+                        tpincode.toString().isEmpty() ||
                         tphone.toString().isEmpty()) {
                     Toast.makeText(MachineRenterDetails.this, "Please fill all the details", Toast.LENGTH_SHORT).show();
                 } else {
@@ -154,12 +165,20 @@ public class MachineRenterDetails extends AppCompatActivity {
         pd1.show();
 
         String name = tname.getText().toString();
-        String address = taddress.getText().toString();
+        String city = tcity.getText().toString();
+        String post = tpost.getText().toString();
+        String district = tdistrict.getText().toString();
+        String state = tstate.getText().toString();
+        String pincode = tpincode.getText().toString();
         String phone = tphone.getText().toString();
 
         HashMap<String, Object> rentor = new HashMap<>();
         rentor.put("Name", name);
-        rentor.put("Address", address);
+        rentor.put("City", city);
+        rentor.put("Post", post);
+        rentor.put("District", district);
+        rentor.put("State", state);
+        rentor.put("Pincode", pincode);
         rentor.put("Phone", phone);
 
         FirebaseStorage storage= FirebaseStorage.getInstance();
