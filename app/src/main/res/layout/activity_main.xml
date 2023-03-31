@@ -19,6 +19,7 @@
 
     <androidx.cardview.widget.CardView
 
+        android:id="@+id/card1"
         android:layout_marginBottom="30dp"
         android:layout_width="match_parent"
         android:layout_height="150dp"
@@ -33,25 +34,29 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <Button
+            <TextView
                 android:id="@+id/vendor"
-                android:paddingHorizontal="30dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/login_button"
+                android:gravity="start"
+                android:paddingHorizontal="2dp"
                 android:text="Vendor"
-                android:textColor="@color/white" />
+
+                android:textAlignment="textStart"
+                android:textColor="@color/darkgreen"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
             <TextView
-                android:layout_width="100dp"
+                android:layout_width="180dp"
                 android:layout_height="50dp"
-                android:text="This is vendor module"
-                android:textSize="10dp"
-                android:layout_alignStart="@+id/vendor"
                 android:layout_below="@+id/vendor"
-                />
+                android:layout_alignStart="@+id/vendor"
+                android:text="This is vendor module"
+                android:textSize="15dp"
+                android:textColor="@color/black"/>
 
             <ImageView
                 android:id="@+id/vlogo"
@@ -65,6 +70,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/card2"
         android:layout_marginBottom="30dp"
         android:layout_width="match_parent"
         android:layout_height="150dp"
@@ -79,25 +85,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <Button
+            <TextView
                 android:id="@+id/MachineLender"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Machine Lender"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/login_button"
-
-                android:textColor="@color/white" />
+                android:text="Machine Lender"
+                android:textColor="@color/darkgreen"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
             <TextView
-                android:layout_width="100dp"
+                android:layout_width="180dp"
                 android:layout_height="50dp"
-                android:text="This is machine lender module"
-                android:textSize="10dp"
-                android:layout_alignStart="@+id/MachineLender"
                 android:layout_below="@+id/MachineLender"
-                />
+                android:layout_alignStart="@+id/MachineLender"
+                android:text="This is machine lender module"
+
+                android:textSize="15dp"
+                android:textColor="@color/black"/>
 
             <ImageView
                 android:id="@+id/mlogo"
@@ -112,6 +119,7 @@
 
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/card3"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         app:cardBackgroundColor="@color/white"
@@ -125,25 +133,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <Button
+            <TextView
                 android:id="@+id/PostHarvester"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/login_button"
                 android:text="Post Harvester"
-
-                android:textColor="@color/white" />
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/darkgreen" />
 
             <TextView
-                android:layout_width="100dp"
+                android:layout_width="180dp"
                 android:layout_height="50dp"
-                android:text="This is machine lender module"
-                android:textSize="10dp"
-                android:layout_alignStart="@+id/PostHarvester"
                 android:layout_below="@+id/PostHarvester"
-                />
+                android:layout_alignStart="@+id/PostHarvester"
+                android:text="This is machine lender module"
+                android:textSize="15dp"
+                android:textColor="@color/black"
+               />
 
             <ImageView
                 android:id="@+id/hlogo"
