@@ -7,37 +7,53 @@
     android:orientation="vertical"
     android:background="@color/white"
     tools:context=".MachineRent.MachineRenterDetails">
+
+    <ImageView
+        android:layout_marginBottom="-40dp"
+        android:id="@+id/img1"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/profilebg"
+        android:scaleType="centerCrop"
+
+       />
+    <ImageView
+        android:id="@+id/img2"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/profilebgvendor"
+        android:scaleType="centerCrop"
+        android:layout_gravity="end"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="-155dp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Profile Details"
+        android:text="Lender Details"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:textColor="@color/black"
+        android:textColor="@color/darkgreen"
         android:layout_gravity="center"
-        android:layout_marginTop="40dp"/>
+        android:layout_marginTop="30dp"/>
 
     <EditText
         android:id="@+id/renter_name"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="5dp"
         android:background="@null"
         android:drawablePadding="15dp"
         android:hint="Your Full Name"
         android:inputType="textPersonName"
         android:padding="10dp"
         android:textColor="@color/black"
-        android:textColorHint="#838282"/>
+        android:textColorHint="@color/lightgreen"/>
 
     <EditText
         android:id="@+id/renter_phone"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:background="@null"
@@ -46,13 +62,13 @@
         android:inputType="phone"
         android:padding="10dp"
         android:textColor="@color/black"
-        android:textColorHint="#838282"/>
+        android:textColorHint="@color/lightgreen"/>
 
     <EditText
         android:id="@+id/renter_city"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:background="@null"
@@ -61,12 +77,11 @@
         android:inputType="textPostalAddress|textMultiLine"
         android:padding="10dp"
         android:textColor="@color/black"
-        android:textColorHint="#838282"/>
+        android:textColorHint="@color/lightgreen"/>
     <EditText
         android:id="@+id/renter_post"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:background="@null"
@@ -75,12 +90,11 @@
         android:inputType="textPostalAddress|textMultiLine"
         android:padding="10dp"
         android:textColor="@color/black"
-        android:textColorHint="#838282"/>
+        android:textColorHint="@color/lightgreen"/>
     <EditText
         android:id="@+id/renter_district"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:background="@null"
@@ -89,12 +103,11 @@
         android:inputType="textPostalAddress|textMultiLine"
         android:padding="10dp"
         android:textColor="@color/black"
-        android:textColorHint="#838282"/>
+        android:textColorHint="@color/lightgreen"/>
     <EditText
         android:id="@+id/renter_state"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:background="@null"
@@ -103,7 +116,7 @@
         android:inputType="textPostalAddress|textMultiLine"
         android:padding="10dp"
         android:textColor="@color/black"
-        android:textColorHint="#838282"/>
+        android:textColorHint="@color/lightgreen"/>
     <EditText
         android:id="@+id/renter_pincode"
         android:layout_width="match_parent"
@@ -117,37 +130,45 @@
         android:inputType="textPostalAddress|textMultiLine"
         android:padding="10dp"
         android:textColor="@color/black"
-        android:textColorHint="#838282"/>
+        android:textColorHint="@color/lightgreen"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center">
+        android:layout_gravity="center">
         <ImageView
+            android:layout_marginLeft="10dp"
             android:id="@+id/renterimg"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:src="@drawable/ic_launcher_background"/>
+            android:src="@drawable/imgnotfound"
+             />
         <Button
             android:id="@+id/rentershowimg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Show image"
+            android:background="@drawable/login_button"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:paddingHorizontal="20dp"
             android:layout_marginLeft="10dp"/>
 
     </LinearLayout>
 
     <Button
         android:id="@+id/renter_Submit_btn"
+        android:background="@drawable/login_button"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="Submit"
         android:layout_gravity="center"
         android:gravity="center"
-        android:layout_margin="30dp"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginTop="25dp"/>
+      />
 </LinearLayout>
+
+

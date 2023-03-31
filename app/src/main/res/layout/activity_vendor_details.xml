@@ -115,5 +115,6 @@
         android:layout_margin="30dp"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginTop="25dp"/>
+        android:layout_marginTop="25dp"
+      />
 </LinearLayout>
