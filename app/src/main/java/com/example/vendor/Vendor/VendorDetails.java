@@ -81,6 +81,9 @@ public class VendorDetails extends AppCompatActivity {
                     Intent i=new Intent(VendorDetails.this, VendorDashboard.class);
                     startActivity(i);
                     finish();
+                }else{
+                    pd.dismiss();
+                    Toast.makeText(VendorDetails.this, "Enter Your Details Here", Toast.LENGTH_SHORT).show();
                 }
             }
         }).addOnFailureListener(new OnFailureListener() {

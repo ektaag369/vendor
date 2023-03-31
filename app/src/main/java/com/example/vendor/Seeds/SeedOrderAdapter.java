@@ -7,15 +7,21 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.vendor.R;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.firestore.SetOptions;
 import com.squareup.picasso.Picasso;
@@ -66,13 +72,19 @@ public class SeedOrderAdapter extends RecyclerView.Adapter<SeedOrderAdapter.Seed
                         .collection("Orders").document(pos.getDocumentId()).set(status, SetOptions.merge());
                 holder.status.setText("Delivered");
 
-//                firestore.collection("Farmers").document(pos.getOrder_Product_UserID())
-//                        .collection("Orders").whereEqualTo("Order_id",pos.getOrder_id()).get()
-//                        .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-//                            @Override
-//                            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-//                            }
-//                        });
+                firestore.collection("Farmers").document(pos.getOrder_Product_UserID())
+                        .collection("Orders").whereEqualTo("Order_id",pos.getOrder_id()).addSnapshotListener(new EventListener<QuerySnapshot>() {
+                            @Override
+                            public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                           if (error!=null){
+                               Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
+                           }
+                                    DocumentSnapshot snapshot=value.getDocuments().get(0);
+                                    String id=snapshot.getId();
+
+                                    firestore.collection("Farmers").document(pos.getOrder_Product_UserID()).collection("Orders").document(id).set(status,SetOptions.merge());
+                            }
+                        });
 
             }
         });
